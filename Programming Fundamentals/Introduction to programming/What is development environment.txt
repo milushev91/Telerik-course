@@ -1,0 +1,17 @@
+1. Definition
+A development environment is not a single tool; it is a collection of tools and settings that work together to allow you to write, run, test, and debug your code.
+
+2. The Core Components
+The lecture identifies several essential parts that most developers use:
+
+Code Editor / IDE: The application where you actually write and format your code (e.g., VS Code, PyCharm).
+Programming Language & Runtime/Interpreter: The language defines the instructions, while the interpreter (like Python) is the engine that actually executes those instructions.
+Terminal: A text-based interface used to interact with your system, navigate folders, and launch your programs (e.g., python main.py).
+Project Files & Folders: Code is organized into files (like main.py) kept within a specific project structure.
+Result Output: The place where you see the "output" of your code—often the terminal for beginners, or a browser for web projects.
+3. The Development Cycle
+The lecture emphasizes a simple, recurring workflow: Write → Run → Check → Fix
+
+4. Important Mindset
+Don't be overwhelmed: The goal is not to master every tool at once, but to understand the role each tool plays and how they interact with each other.
+It’s a system: Beginners often get confused by thinking they need to learn one "magic app." Instead, try to view your workspace as a set of interconnected tools.
