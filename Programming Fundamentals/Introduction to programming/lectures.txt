@@ -20,3 +20,15 @@ Computers are powerful tools because they are:
 Extremely Fast: They can process hundreds of millions of instructions per second.
 Reliable and Predictable: They follow your instructions exactly as written.
 Crucially, the lecture highlights that computers cannot "think" on their own. They rely entirely on the programmer to understand a problem and write the correct instructions to solve it. Success in programming requires two key skill sets: problem-solving and the ability to write precise code.
+
+What is Python?
+
+What is Python? It is a high-level, multi-paradigm programming language designed specifically for readability and ease of use.
+High-Level Nature: Python abstracts away low-level computer details (like hardware communication or memory management), allowing developers to focus entirely on solving functional problems.
+Multi-paradigm Support: The language allows you to structure code in various ways, including procedural, functional, and object-oriented programming.
+Simple Syntax: One of Python's greatest strengths is its expressive and simple syntax, which often resembles the English language, making it highly accessible for beginners.
+Popularity and Modern Applications: Python has remained popular for over 30 years and has become a standard in modern fields like Artificial Intelligence and Data Analysis.
+Versatility: You can use Python for a wide range of tasks, such as creating desktop applications, building web servers, or writing simple scripts for automation.
+Accessibility for Beginners: It is open-source (free to use and study), has an immense amount of free educational resources, and can be set up on your machine in just a few minutes.
+
+
