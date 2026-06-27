@@ -1,0 +1,10 @@
+Indentation:
+
+Unlike some other programming languages, Python treats whitespace as syntactically significant.
+All statements within the same block must have the exact same level of indentation.
+If lines of code intended for the same block are indented differently, the Python interpreter will raise an IndentationError, and the code won't execute at all.
+Comments:
+
+Comments are used to write text that the Python interpreter completely ignores.
+They start with the hash symbol (#).
+They are primarily used for adding explanations about what the code does, providing warnings to other developers (or your future self), or temporarily disabling specific lines of code to test how the rest of the script performs.
