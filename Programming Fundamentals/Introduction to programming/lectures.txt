@@ -1,0 +1,22 @@
+Introduction to programming 
+
+1. What is Programming?
+At its essence, programming is the process of creating a sequence of instructions that tell a computer how to perform a specific task. These tasks can range from simple calculations to complex operations like reading files, browsing the internet, or displaying graphics.
+
+2. The Two Foundations of Every Program
+Every program, regardless of its size or complexity, consists of two main components:
+
+Data: The information the program processes (like numbers, text, or user input).
+Algorithms: The specific sequence of instructions that define how that data should be handled or modified.
+3. Basic Elements in Code
+The lecture introduced a simple Python example to illustrate these concepts:
+
+Variables: Think of these as "containers" or boxes used to store data, each with a unique name (e.g., a = 10).
+Functions: These act as "black boxes" that perform specific tasks for us. We don't always need to know exactly how they work internally; we just need to know how to use them (e.g., the print() function).
+Algorithms: By combining variables and functions, we create a logical flow that acts as the algorithm to solve a problem.
+4. Why We Program
+Computers are powerful tools because they are:
+
+Extremely Fast: They can process hundreds of millions of instructions per second.
+Reliable and Predictable: They follow your instructions exactly as written.
+Crucially, the lecture highlights that computers cannot "think" on their own. They rely entirely on the programmer to understand a problem and write the correct instructions to solve it. Success in programming requires two key skill sets: problem-solving and the ability to write precise code.
