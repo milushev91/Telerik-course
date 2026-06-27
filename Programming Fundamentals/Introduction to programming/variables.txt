@@ -1,0 +1,39 @@
+1. Variables and Assignment
+When you set x = 42, you are telling Python to associate the value 42 with the name x.
+
+# Storing a number (integer)
+age = 27
+# Storing a text (string)
+cat_name = "Thomas"
+2. Using Variable Values in Operations
+Remember that when you perform math, Python reaches into the variable to get the value, not the name itself. The right side of the = is always calculated first.
+
+a = 10
+b = 15
+
+# Python takes 10 and 15, adds them to make 25, then assigns 25 to 'c'
+c = a + b 
+3. Updating (Overwriting) Values
+Since a variable can only hold one value at a time, assigning something new replaces what was previously there. Think of it like swapping the contents of a drawer.
+
+h = 27
+# Python sees: h = 27 + 1
+# Old value 27 is discarded; h now becomes 28
+h = h + 1 
+4. Order of Execution (NameError)
+If you try to use a variable before Python has seen it defined, the program will crash with a NameError.
+
+# This will fail because 'box' hasn't been created yet
+result = box + 5 
+
+# Correct way:
+box = 10
+result = box + 5  # This works!
+5. Naming Conventions
+Since you cannot have spaces in variable names, we use conventions. Choose one and stick to it for consistency.
+
+# snake_case (using underscores)
+user_age = 25
+
+# camelCase (capitalizing each word except the first)
+userAge = 25
