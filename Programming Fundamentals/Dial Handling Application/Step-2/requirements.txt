@@ -1,0 +1,21 @@
+Validate the User Input
+ 
+For our project we will need to check the input from the user and ensure 
+
+that there is certain number of characters and all those characters are digits. Write program that:
+
+Prompt for user input
+
+Receives and saves the input into properly named variable
+
+Checks via conditional statement(s) if the input is of certain length (3 characters)
+
+Check if all characters are digits
+
+Print "Input accepted" if all checks pass (3 digits)
+
+Print "Invalid number of characters in the input: must be 3" if more or less characters in the input
+
+Print "Input must contain digits only!"
+
+You can explore and use the built-in function isdigit() to check if a string contains digits only
