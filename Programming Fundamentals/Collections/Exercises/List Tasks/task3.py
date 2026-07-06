@@ -7,5 +7,5 @@
 # n = 2 -> output 3
 
 new_list = input().split(", ")
-n = 2 
-print(new_list[2])
+n = int(input()) 
+print(new_list[n])
