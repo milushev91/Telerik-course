@@ -9,17 +9,20 @@
 
 lines = input().split(", ")
 scores = {}
+times = {}
 
 for line in lines:
     name, score = line.split(":")
 
     if name not in scores:
         scores[name] = 0
+        times[name] = 0
 
     scores[name] += int(score)
+    times[name] += 1
     
-for key, value in scores.items():
-    print(f"{key} -> {value}", end=" ")
+for name in scores:
+    print(f"{name} -> {scores[name] / times[name]}", end=" ")
 
 
 
