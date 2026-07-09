@@ -15,4 +15,4 @@ if "--" in output or "++" in output:
     print("no")
 else:
     print("yes")
-print(output)
+
