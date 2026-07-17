@@ -1,38 +1,56 @@
-n1, n2 = [int(n) for n in input().split()]
-first_array = [int(num) for num in input().split()]
-second_array = [int(num) for num in input().split()]
+def extend_output_arr(start, end, arr, add_one):
 
-arrays_len = {
-    len(first_array): first_array,
-    len(second_array): second_array
-}
+    for idx in range(start, end):
+        number = arr[idx]
 
-lengths = arrays_len.keys()
+        if add_one:
+            number += 1
+            add_one = False
+            
+            if number > 9:
+                number = int(str(number)[-1])
+                add_one = True
+            
+        output_arr.append(str(number))
 
-min_len, max_len = min(lengths), max(lengths)
-sum_array = [0] * max_len
-additions = [0] * max_len
+first_arr_size, second_arr_size = [int(size) for size in input().split()]
+first_arr = [int(num) for num in input().split()]
+second_arr = [int(num) for num in input().split()]
 
-for idx in range(min_len):
-    current_sum = first_array[idx] + second_array[idx]
+        
+first_arr_bigger = False
+two_digit_sum_num = False
 
-    if current_sum > 9:
-        current_sum = str(current_sum)[-1]
+output_arr = []
 
-        if idx != (max_len - 1):
-            additions[idx + 1] += 1
-        else:
-            additions[idx] += 1
+for idx in range(first_arr_size):
+    
+    if idx >= second_arr_size:
+        first_arr_bigger = True
+        break
+    
+    sum_num = first_arr[idx] + second_arr[idx]
+    
+    if two_digit_sum_num:
+        sum_num += 1
+        
+        two_digit_sum_num = False
+        
+    
+    if sum_num > 9:
+        two_digit_sum_num = True
+        
+        sum_num = int(str(sum_num)[-1])
     
     
-    sum_array[idx] += int(current_sum)
+    output_arr.append(str(sum_num))
 
+if first_arr_bigger:
+    extend_output_arr(second_arr_size, first_arr_size, first_arr, two_digit_sum_num)
+else:
+    extend_output_arr(first_arr_size, second_arr_size, second_arr, two_digit_sum_num)
 
-for idx in range(max_len - 1, min_len - 1, -1):
-    sum_array[idx] = arrays_len[max_len][idx]
-
-print(sum_array)
-
+print(" ".join(output_arr))
 
 
     
