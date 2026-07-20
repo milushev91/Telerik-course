@@ -1,32 +1,42 @@
-n = int(input())
+rows = int(input())
 
-matrix = [[int(num) for num in input().split()] for _ in range(n)]
-matrix_cols = len(matrix[0])
+matrix = [list(map(int, input().split())) for _ in range(rows)]
 
-print(*matrix, sep="\n")
-cordinate_line = [int(num) for num in input().split()]
-cordinate_line_len = len(cordinate_line)
-cordinate_pairs = [cordinate_line[i:i+2] for i in range(0, cordinate_line_len, 2)]
-print(cordinate_pairs)
+coords = list(map(int, input().split()))
 
-sum_score = 0
+cols = len(matrix[0])
 
-for cordinate_pair in cordinate_pairs:
-    row, col = cordinate_pair
-    row_start = 0
-    row_end = col
-    row_step = 1
+max_sum = float('-inf')
 
-    if row < 0:
-        row_start = matrix_cols - 1
-        row_end -= 1
-        row_step = -1 
-    
-    for i in range(row_start, row_end, row_step):
-        sum_score += matrix[row - 1][i]
-    
-    for i in range(row-2, -1, -1):
-        print(i)
-        sum_score += matrix[row][col]
-    break
-print(sum_score)
+for i in range(0, len(coords), 2):
+    r = coords[i]
+    c = coords[i + 1]
+
+    row = abs(r) - 1
+    col = abs(c) - 1
+
+    current_sum = 0
+
+    # Horizontal movement
+    if r > 0:
+        # Start from the left
+        for j in range(col + 1):
+            current_sum += matrix[row][j]
+    else:
+        # Start from the right
+        for j in range(cols - 1, col - 1, -1):
+            current_sum += matrix[row][j]
+
+    # Vertical movement
+    if c > 0:
+        # Move up
+        for rr in range(row - 1, -1, -1):
+            current_sum += matrix[rr][col]
+    else:
+        # Move down
+        for rr in range(row + 1, rows):
+            current_sum += matrix[rr][col]
+
+    max_sum = max(max_sum, current_sum)
+
+print(max_sum)
