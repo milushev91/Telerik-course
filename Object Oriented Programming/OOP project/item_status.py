@@ -6,7 +6,7 @@ class ItemStatus:
     VERIFIED = 'Verified'
 
     @classmethod
-    def get_next(cls, current):
+    def get_next(cls, current:str) -> str:
     # logic to return the next valid ItemStatus, based on current 
         if current == "Open":
             return cls.TODO
@@ -20,7 +20,7 @@ class ItemStatus:
             return cls.VERIFIED
             
     @classmethod
-    def get_previous(cls, current):
+    def get_previous(cls, current:str) -> str:
         if current == 'Verified':
             return cls.DONE
         elif current == "Done":
