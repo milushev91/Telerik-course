@@ -1,5 +1,7 @@
 class Employee:
     def __init__(self, full_name, department, salary):
+        if full_name == "":
+            raise ValueError("Fullname cannot be empty string")
         self._full_name = full_name
         self.department = department
         self.salary = salary
