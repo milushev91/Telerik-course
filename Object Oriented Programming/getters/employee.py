@@ -1,8 +1,12 @@
 class Employee:
     def __init__(self, full_name, department, salary):
-        self.full_name = full_name
+        self._full_name = full_name
         self.department = department
         self.salary = salary
+
+    @property
+    def full_name(self):
+        return self._full_name
 
     @property 
     def salary(self):
