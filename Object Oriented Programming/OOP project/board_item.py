@@ -1,7 +1,8 @@
 from datetime import date
+from item_status import ItemStatus
 
 class BoardItem:
-    def __init__(self, title, due_date):
+    def __init__(self, title, due_date) -> None:
         self.title = title
         self.due_date = due_date 
         self._status = "Open"
@@ -34,7 +35,19 @@ class BoardItem:
     
     @status.setter
     def status(self, value):
+
         if value not in ["Open", "Todo", "InProgress", "Done", "Verified"]:
             raise ValueError("Not valid status")
         
         self._status = value
+
+
+    def revert_status(self) -> None:
+        self._status = ItemStatus.get_previous(self._status)
+    
+    def advance_status(self) -> None:
+        self._status = ItemStatus.get_next(self._status)
+    
+    def info(self) -> str:
+        return f"{self.title}, [{self._status} | {self.due_date}]"
+    
