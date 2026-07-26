@@ -1,11 +1,14 @@
 from datetime import date
 from item_status import ItemStatus
+from event_log import EventLog
 
 class BoardItem:
-    def __init__(self, title, due_date) -> None:
-        self.title = title
-        self.due_date = due_date 
-        self._status = "Open"
+    def __init__(self, title:str, due_date:date) -> None:
+        self._title = title
+        self._due_date = due_date 
+        self._status = ItemStatus.OPEN
+        event = EventLog(f"Item created: {self.title}, [{self._status} | {self.due_date}]")
+        self._events:list[str] = [event.info()]
 
     @property 
     def title(self):
@@ -27,21 +30,19 @@ class BoardItem:
         if date.today() > value:
             raise ValueError("Due date cannot be into the past.")
         
+        current_due_date = self._due_date
         self._due_date = value
-    
+        event = EventLog(f"DueDate changed from {current_due_date} to {self._due_date}")
+        self._events.append(event.info())
+
     @property 
     def status(self):
         return self._status 
     
-    @status.setter
-    def status(self, value):
-
-        if value not in ["Open", "Todo", "InProgress", "Done", "Verified"]:
-            raise ValueError("Not valid status")
-        
-        self._status = value
-
-
+    @property
+    def events(self):
+        return self._events
+    
     def revert_status(self) -> None:
         self._status = ItemStatus.get_previous(self._status)
     
@@ -50,4 +51,9 @@ class BoardItem:
     
     def info(self) -> str:
         return f"{self.title}, [{self._status} | {self.due_date}]"
+    
+    def history(self) -> str:
+
+        for event in self.events:
+            print(event)
     
